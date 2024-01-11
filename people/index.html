@@ -199,16 +199,16 @@ span{
 
  /* Two columns side by side */
 .column {
-   float: left;
-   width: 33.3%;
-   margin-bottom: 16px;
-   padding: 0 18px;
- }
- 
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 12px;
+}
+
  /* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 650px) {
   .column {
-    width: 90%;
+    width: 100%;
     display: block;
   }
 }
@@ -277,6 +277,14 @@ span{
   @font-face {
     font-family: "Apple Chancery";
     src: url("Apple Chancery.ttf");
+  }
+
+  i {
+    display: inline-block;
+    margin-right: 0.2em;
+    margin-left: -0.5em;
+    margin-top: -1em;
+    margin-bottom: -1em;
   }
 
 
@@ -803,8 +811,21 @@ body, html {
       </div>
     </div>
   </div>
-</div>
- <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="./cai.png" alt="Cai" style="width:100%">
+      <div class="container">
+        <h2>Cai Wingfield</h2>
+        <p class="title">Research Fellow (2023 -), <b>MI n</b></p>
+        <p>Cai is a Senior Research Data Scientist with the Interdisciplinary Institute for Data Science and AI (IIDSAI) at the University of Birmingham. He received his PhD in theoretical computer science at the University of Bath, and has worked as a researcher in cognitive science at the universities of Cambridge and Lancaster.</p>
+        <p>with <a href="https://neuosc.com/" target="_blank">Ole Jensen</a></p>
+        <a href="https://caiwingfield.net/" target="_blank" class="fa fa-home fa-2x"></a>
+        <a href="https://scholar.google.com/citations?hl=en&user=ZdqCl64AAAAJ" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
+        <a href="https://github.com/caiw" target="_blank" class="fa fa-github fa-2x"></a>
+        <a href="mailto:c.wingfield@bham.ac.uk" target="_blank" class="fa fa-envelope-o fa-2x"></a>
+      </div>
+    </div>
+  </div>
   <div class="column">
     <div class="card">
       <img src="./Qiming.jpg" alt="Qiming" style="width:100%">
@@ -899,8 +920,8 @@ body, html {
       <div class="container">
         <h2>Kangning Zhang</h2>
         <p class="title">PhD Student (2020 -), <b>MI h</b><br>@Oxford</p>
-        <p>Kangning is originally from China and completed a MMath degree in Mathematics and Statistics at Jesus College, Oxford. She enjoy technology, travelling, running and like to meet people that share the same interests.
-        She is currently working on developing interpretability of self-supervised representation learning in medical image, with a focus on ultrasound image, at the Biomedical Image Analysis group (IBME), Oxford.</p>
+        <p>Kangning completed a MMath degree in Mathematics and Statistics at Jesus College, Oxford. She enjoy technology, travelling, running and like to meet people that share the same interests.
+        She is currently working on developing interpretability of self-supervised representation learning in medical image, with a focus on ultrasound image, at the IBME, Oxford.</p>
         <p>with <a href="" target="_blank"> Alison Noble</a></p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
@@ -960,7 +981,7 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
       <img src="chen.jpg" alt="Chen" style="width:100%">
       <div class="container">
         <h2>Chen Xu</h2>
-        <p class="title">(PhD from Fudan University, Apr. 2023 -), <b>MI h</b></p>
+        <p class="title">(PhD student from Fudan University, 2023 -), <b>MI h</b></p>
         <p>Chen is currently a visiting Ph.D. student in school of computer science at the University of Birmingham. His research interest is multimodal medical representation learning.</p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
@@ -974,7 +995,7 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
       <img src="zareef.png" alt="Zareef" style="width:100%">
       <div class="container">
         <h2>Zareef Safdar</h2>
-        <p class="title">(BSE from University of Michigan &rarr; Master@Simon Fraser University, 2022 -), <b>MI v</b></p>
+        <p class="title">(BSE from University of Michigan &rarr; Master@Simon Fraser University, 2023 -), <b>MI v</b></p>
         <p>Zareef is a Master of Visual Computing student at Simon Fraser University. His research focuses on synthetic data generation using game engines for training vision models.</p>
         <a href="https://safdarzareef.github.io/" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
@@ -985,10 +1006,24 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
   </div>
   <div class="column">
     <div class="card">
+      <img src="dongheng.jpg" alt="Dongheng" style="width:100%">
+      <div class="container">
+        <h2>Dongheng Lin</h2>
+        <p class="title">(Master from UIUC, 2023 -), <b>MI v</b></p>
+        <p>Dongheng is currently a Master student at the University of Illinois, Urbana-Champaign. His primary focus lies in the realms of Feature Engineering and Representation Learning, specifically applied to Social Media Images.</p>
+        <a href="https://rathgrith.github.io/" target="_blank" class="fa fa-home fa-2x"></a>
+        <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID&user=DpiMTsoAAAAJ" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
+        <a href="https://www.linkedin.com/in/dongheng-lin-3a7280281/" target="_blank" class="fa fa-linkedin fa-2x"></a>
+        <a href="mailto:dl58@illinois.edu" target="_blank" class="fa fa-envelope-o fa-2x"></a>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
       <img src="Qiyue.jpg" alt="Qiyue" style="width:100%">
       <div class="container">
         <h2>Qiyue Sun</h2>
-        <p class="title">(PhD from Shandong University, joining Jan. 2024), <b>MI v</b></p>
+        <p class="title">(PhD student from Shandong University, joining Jan. 2024), <b>MI v</b></p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
