@@ -56,7 +56,7 @@
 
     
 
-    <id>https://mix.jianbojiao.com/datasets/atom.xml</id>
+    <id>http://localhost:1313/datasets/atom.xml</id>
 
     
         
@@ -66,7 +66,7 @@
         
 
         
-            <link href="https://mix.jianbojiao.com/datasets/atom.xml" rel="self" type="application/atom+xml"/>
+            <link href="http://localhost:1313/datasets/atom.xml" rel="self" type="application/atom+xml"/>
         
     
         
@@ -76,7 +76,7 @@
         
 
         
-            <link href="https://mix.jianbojiao.com/datasets/" rel="alternate" type="text/html"/>
+            <link href="http://localhost:1313/datasets/" rel="alternate" type="text/html"/>
         
     
         
@@ -84,7 +84,7 @@
         
 
         
-            <link href="https://mix.jianbojiao.com/datasets/rss.xml" rel="alternate" type="application/rss+xml"/>
+            <link href="http://localhost:1313/datasets/rss.xml" rel="alternate" type="application/rss+xml"/>
         
     
 
