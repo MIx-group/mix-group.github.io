@@ -54,7 +54,7 @@
 
     
 
-    <id>http://localhost:1313/atom.xml</id>
+    <id>https://mix.jianbojiao.com/atom.xml</id>
 
     
         
@@ -64,7 +64,7 @@
         
 
         
-            <link href="http://localhost:1313/atom.xml" rel="self" type="application/atom+xml"/>
+            <link href="https://mix.jianbojiao.com/atom.xml" rel="self" type="application/atom+xml"/>
         
     
         
@@ -74,7 +74,7 @@
         
 
         
-            <link href="http://localhost:1313/" rel="alternate" type="text/html"/>
+            <link href="https://mix.jianbojiao.com/" rel="alternate" type="text/html"/>
         
     
         
@@ -82,7 +82,7 @@
         
 
         
-            <link href="http://localhost:1313/index.json" rel="alternate" type="application/json"/>
+            <link href="https://mix.jianbojiao.com/index.json" rel="alternate" type="application/json"/>
         
     
         
@@ -90,7 +90,7 @@
         
 
         
-            <link href="http://localhost:1313/rss.xml" rel="alternate" type="application/rss+xml"/>
+            <link href="https://mix.jianbojiao.com/rss.xml" rel="alternate" type="application/rss+xml"/>
         
     
 
