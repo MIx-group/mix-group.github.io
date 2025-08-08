@@ -205,10 +205,12 @@ span{
  /* Two columns side by side */
 .column {
   float: left;
-  width: 33.3%;
+  width: 25%;
   margin-bottom: 16px;
   padding: 0 12px;
-}
+  box-sizing: border-box;
+  min-width: 300px; /* or 240px if needed */
+} 
 
  /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
@@ -218,8 +220,16 @@ span{
   }
 }
 
+
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+
 /* Add some shadows to create a card effect */
 .card {
+  transition: transform 0.2s ease;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -780,7 +790,7 @@ body, html {
             
 
             
-                <p class="mb-0 text-center text-secondary" id="paige-reading-time">3 minutes</p>
+                <p class="mb-0 text-center text-secondary" id="paige-reading-time">4 minutes</p>
             
         </div>
     
@@ -853,8 +863,22 @@ body, html {
     </div>
 </div>
 <h3 id="news">News <a aria-label="Link to this section" class="paige-header-link text-decoration-none" href="#news">#</a></h3>
+<head>
+  <!-- 引入 Font Awesome 4（你的 class 用的是 v4 语法） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<i class="fa fa-trophy" style="font-size:32px" aria-hidden="true"></i>
+<span style="color:#00A6D6; font-weight:bold;">
+    We are organising the
+    <a href="https://x360dataset.github.io/BinEgo-360" target="_blank" style="color:#FF6F31;">BinEgo-360 Workshop and Challenge</a>
+    at ICCV 2025 in Hawaii. Please participate in the
+    <a href="https://x360dataset.github.io/BinEgo-360/#challenge" target="_blank" style="color:#FF6F31;">Challenge</a>
+    to get various awards, and join us to <a href="https://forms.gle/Yhui7XdjZhkCvnwv5" target="_blank" style="color:#FF6F31;">present your papers</a>!
+</span>
 <pre>
 <div  style="overflow-y: scroll; height:300px;"> 
+Jul 2025:   We have 4 papers accepted to BMVC 2025, congrats to the students!
+Jun 2025:   Our paper about dynamic 3D scene reconstruction is accepted to ICCV 2025, congrats to the co-authors!
 May 2025:   Our <a href="https://x360dataset.github.io/BinEgo-360/"><font><strong><i>BinEgo-360</strong></i></font></a> Workshop is accepted to ICCV 2025, we invite paper presentations and challenge participation!
 Mar 2025:   Our paper about incremental learning is accepted to CVPR 2025, congrats to the co-authors!
 Feb 2025:   Congratulations to Kangning on successfully defending her viva!
@@ -1488,9 +1512,11 @@ Prospective PhD students Please apply via the University application system here
 
     
         <p class="fst-italic mb-0 paige-summary text-center">Jianbo Jiao Principle Investigator
-Jianbo is an Assistant Professor in the School of Computer Science at the University of Birmingham, a former Royal Society Short Industry Fellow, and a visiting researcher at the University of Oxford.
+Jianbo is an Associate Professor in the School of Computer Science at the University of Birmingham, a Fellow of the HEA and a former Royal Society Short Industry Fellow.
 Isaac Akintaro PhD Student (2024 -), MI v
-Isaac is a first-year PhD student in Computer Science at the University of Birmingham. His research focuses on Visual Reasoning, with a background in AI and Machine Learning.</p>
+Isaac&#39;s research focuses are around Visual Reasoning and 3D generation. He completed an MSc as a Google DeepMind Scholar.
+Hao Ai PhD Student (2024 -), MI v
+Hao&#39;s research focuses are on scene understanding, scene generation, and 3D geometry estimation, especially in the real-world scenarios.</p>
     
 
     
@@ -1502,7 +1528,7 @@ Isaac is a first-year PhD student in Computer Science at the University of Birmi
     
 
     
-        <p class="mb-0 paige-reading-time text-center text-secondary">4 minutes</p>
+        <p class="mb-0 paige-reading-time text-center text-secondary">3 minutes</p>
     
 </div>
 

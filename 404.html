@@ -194,10 +194,12 @@ span{
  /* Two columns side by side */
 .column {
   float: left;
-  width: 33.3%;
+  width: 25%;
   margin-bottom: 16px;
   padding: 0 12px;
-}
+  box-sizing: border-box;
+  min-width: 300px; /* or 240px if needed */
+} 
 
  /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
@@ -207,8 +209,16 @@ span{
   }
 }
 
+
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+
 /* Add some shadows to create a card effect */
 .card {
+  transition: transform 0.2s ease;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 

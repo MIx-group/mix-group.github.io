@@ -200,10 +200,12 @@ span{
  /* Two columns side by side */
 .column {
   float: left;
-  width: 33.3%;
+  width: 25%;
   margin-bottom: 16px;
   padding: 0 12px;
-}
+  box-sizing: border-box;
+  min-width: 300px; /* or 240px if needed */
+} 
 
  /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
@@ -213,8 +215,16 @@ span{
   }
 }
 
+
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+
 /* Add some shadows to create a card effect */
 .card {
+  transition: transform 0.2s ease;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -773,7 +783,7 @@ body, html {
             
 
             
-                <p class="mb-0 text-center text-secondary" id="paige-reading-time">4 minutes</p>
+                <p class="mb-0 text-center text-secondary" id="paige-reading-time">3 minutes</p>
             
         </div>
     
@@ -792,20 +802,120 @@ body, html {
 
 
 
-    <div class="mw-100 overflow-x-auto" id="paige-content"><!-- Add icon library -->
+    <div class="mw-100 overflow-x-auto" id="paige-content"><style>
+/* Flex container */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+/* Columns inside the row */
+.column {
+  flex: 1 1 calc(25% - 20px); /* 4 columns per row with gap */
+  box-sizing: border-box;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 1024px) {
+  .column {
+    flex: 1 1 calc(33.33% - 20px); /* 3 columns */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    flex: 1 1 calc(50% - 20px); /* 2 columns */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .column {
+    flex: 1 1 100%; /* 1 column */
+  }
+}
+
+/* Card style remains the same */
+.card {
+  /* background-color: #fff; */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 10px 0 4px;
+  font-size: 18px;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+/* Icon row */
+.card .icons {
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.card .icons a {
+  margin: 0 6px;
+  color: #444;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+  .card img {
+    width: 120px;          /* 设置头像宽度 */
+    height: 120px;         /* 固定高度 */
+    object-fit: cover;     /* 保持比例裁剪 */
+    border-radius: 50%;    /* 圆形头像 */
+    display: block;
+    margin: 20px auto 10px; /* 居中加上下边距 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* 阴影提升质感，可选 */
+  }
+
+  .card {
+  max-width: 330px;         /* 卡片最大宽度 */
+  margin: 15px auto;        /* 居中显示并添加垂直间距 */
+  border: 1px solid #eee;   /* 可选：加一个边框更清晰 */
+  border-radius: 10px;      /* 可选：圆角美化 */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* 可选：轻微阴影提升质感 */
+  padding: 10px;
+  text-align: center;
+}
+</style>
+<!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <div class="row">
   <div class="column">
     <div class="card">
-      <img src="https://www.birmingham.ac.uk/images/college-eps-only/comp-sci/staff/jiao-jianbo.jpg?quality=80&width=411" alt="Jianbo" style="width:100%">
+      <img src="https://www.birmingham.ac.uk/images/college-eps-only/comp-sci/staff/jiao-jianbo.jpg?quality=80&width=411" alt="Jianbo">
       <div class="container">
         <h2>Jianbo Jiao</h2>
         <p class="title">Principle Investigator</p>
-        <p>Jianbo is an Assistant Professor in the School of Computer Science at the University of Birmingham, a former Royal Society Short Industry Fellow, and a visiting researcher at the University of Oxford.</p>
+        <p>Jianbo is an Associate Professor in the School of Computer Science at the University of Birmingham, a Fellow of the HEA and a former Royal Society Short Industry Fellow.</p>
         <a href="https://jianbojiao.com" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="https://scholar.google.com/citations?user=HkEiMMwAAAAJ&hl=en" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
         <a href="https://github.com/JianboJiao" target="_blank" class="fa fa-github fa-2x"></a>
-        <a href="https://bitbucket.org/JianboJiao/workspace/repositories/" target="_blank" class="fa fa-bitbucket fa-2x"></a>
+        <!-- <a href="https://bitbucket.org/JianboJiao/workspace/repositories/" target="_blank" class="fa fa-bitbucket fa-2x"></a> -->
         <a href="https://www.linkedin.com/in/JianboJiao/" target="_blank" class="fa fa-linkedin fa-2x"></a>
         <a href="mailto:j.jiao@bham.ac.uk or jiaojianbo.i@gmail.com" target="_blank" class="fa fa-envelope-o fa-2x"></a>
       </div>
@@ -828,11 +938,11 @@ body, html {
   </div> -->
   <div class="column">
     <div class="card">
-      <img src="./Isaac.jpg" alt="Isaac" style="width:100%">
+      <img src="./Isaac.jpg" alt="Isaac">
       <div class="container">
         <h2>Isaac Akintaro</h2>
         <p class="title">PhD Student (2024 -), <b>MI v</b></p>
-        <p>Isaac is a first-year PhD student in Computer Science at the University of Birmingham. His research focuses on Visual Reasoning, with a background in AI and Machine Learning. He completed an MSc as a Google DeepMind Scholar, where he worked on diffusion models, specifically exploring both unconditional and conditional approaches to 2D image synthesis.</p>
+        <p>Isaac's research focuses are around Visual Reasoning and 3D generation. He completed an MSc as a Google DeepMind Scholar.</p>
         <a href="https://www.linkedin.com/in/isaac-akintaro-b86361173/?originalSubdomain=uk" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-github fa-2x"></a>
@@ -842,11 +952,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="./HaoAi.jpg" alt="HaoAi" style="width:100%">
+      <img src="./HaoAi.jpg" alt="HaoAi">
       <div class="container">
         <h2>Hao Ai</h2>
         <p class="title">PhD Student (2024 -), <b>MI v</b></p>
-        <p>Hao is a first-year PhD student in Computer Science at the University of Birmingham. His research focuses on scene understanding, scene generation, and 3D geometry estimation, especially in the real-world scenarios.</p>
+        <p>Hao's research focuses are on scene understanding, scene generation, and 3D geometry estimation, especially in the real-world scenarios.</p>
         <p>with <a href="https://www.birmingham.ac.uk/staff/profiles/computer-science/academic-staff/ofek-eyal" target="_blank"> Eyal Ofek</a> and <a href="https://www.cs.bham.ac.uk//~leonarda/" target="_blank"> Aleš Leonardis</a></p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
@@ -857,11 +967,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="./Peixi.png" alt="Peixi" style="width:100%">
+      <img src="./Peixi.png" alt="Peixi">
       <div class="container">
         <h2>Peixi Liu</h2>
         <p class="title">PhD Student (2024 -), <b>MI v/l/s</b></p>
-        <p>Peixi is a PhD student in the School of Computer Science at the University of Birmingham. Her research focuses on multi-modal data analysis, integrating visual, audio, and text data. With a background in mathematics, she is also interested in applying mathematical spatial theory to improve human understanding of neural network.</p>
+        <p>Peixi's research focuses are on multi-modal data analysis, integrating visual, audio, and text data. With a background in mathematics, she is also interested in applying mathematical spatial theory to improve human understanding of neural network.</p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-github fa-2x"></a>
@@ -871,11 +981,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="./Haotian.jpg" alt="Haotian" style="width:100%">
+      <img src="./Haotian.jpg" alt="Haotian">
       <div class="container">
         <h2>Haotian Li</h2>
         <p class="title">PhD Student (2024 -), <b>MI v</b></p>
-        <p>Haotian is a PhD student in the School of Computer Science at the University of Birmingham. His research focuses on efficient representation learning from multi-modal data. He holds his Master's degree in Computer Science from the University of Birmingham.</p>
+        <p>Haotian's research focuses are on efficient representation learning from multi-modal data. He holds his Master's degree in Computer Science from the University of Birmingham.</p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-github fa-2x"></a>
@@ -885,11 +995,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="./Qiming.jpg" alt="Qiming" style="width:100%">
+      <img src="./Qiming.jpg" alt="Qiming">
       <div class="container">
         <h2>Qiming Huang</h2>
         <p class="title">PhD Student (2023 -), <b>MI v/l</b></p>
-        <p>Qiming is currently a PhD student in Computer Science at the University of Birmingham, working on open-world problems.</p>
+        <p>Qiming's research focus is around open-world visual understanding, with a particular interest in vision-language problems.</p>
         <a href="https://qiming-huang.github.io/" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="https://scholar.google.com/citations?user=hv9vhhAAAAAJ&hl=en" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-github fa-2x"></a>
@@ -899,11 +1009,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="han.jpg" alt="Han" style="width:100%">
+      <img src="han.jpg" alt="Han">
       <div class="container">
         <h2>Han Hu</h2>
         <p class="title">PhD Student (2023 -), <b>MI v/a</b></p>
-        <p>Han is currently a Ph.D. student in computer science at the University of Birmingham. Her research interest lies in self-supervised learning and audio-visual multi-modal learning. She received a bachelor's degree from Zhejiang University.</p>
+        <p>Han's research interest lies in self-supervised learning and audio-visual multi-modal learning. She received a bachelor's degree from Zhejiang University.</p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="https://scholar.google.com/citations?hl=zh-CN&view_op=list_works&gmla=ALUCkoXDRY1FyBSlDC4q0bpK9zpnxnhaf2PzJqv2dgVESTCALg71TCdFa7PGpFqiTrWvhnZalzAY234KBYkLCs4O7U4&user=UJRtTJ0AAAAJ" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-github fa-2x"></a>
@@ -913,11 +1023,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="daniel.jpg" alt="Daniel" style="width:100%">
+      <img src="daniel.jpg" alt="Daniel">
       <div class="container">
         <h3>Daniel MacSwayne</h3>
         <p class="title">PhD Student (2023 -), <b>MI p/n</b></p>
-        <p>Daniel is a PhD student in the School of Computer Science at the University of Birmingham. His research focusses on self-supervised learning from multi-modal data to understand and predict the 3D physical world.</p>
+        <p>Daniel's research focusses are on self-supervised learning from multi-modal data to understand and predict the 3D physical world.</p>
         <p>with <a href="https://www.cs.bham.ac.uk//~leonarda/" target="_blank"> Aleš Leonardis</a></p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
@@ -928,11 +1038,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="chenyuan.jpg" alt="Chenyuan" style="width:100%">
+      <img src="chenyuan.jpg" alt="Chenyuan">
       <div class="container">
         <h2>Chenyuan Qu</h2>
         <p class="title">PhD Student (2023 -), <b>MI v</b></p>
-        <p>Chenyuan Qu is a Ph.D. student enrolled in the School of Computer Science, specializing in the fields of Computer Vision and Multi-model research. His primary focus centres on the development of a multifaceted generative artificial intelligence system geared towards the realms of design and advertising.</p>
+        <p>Chenyuan's research focus is in the fields of Computer Vision and Multi-modal learning. His primary focus centres on the development of a multifaceted generative artificial intelligence system geared towards the realms of design and advertising.</p>
         <p>with Allsee Technologies Ltd.</p>
         <a href="https://chenyuanqu.com/" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
@@ -943,11 +1053,11 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="wenjin.jpg" alt="Wenjin" style="width:100%">
+      <img src="wenjin.jpg" alt="Wenjin">
       <div class="container">
         <h2>Wenjin Wu</h2>
         <p class="title">PhD Student (2023 -), <b>MI c</b></p>
-        <p>Wenjin is a Ph.D. student in computer science at the University of Birmingham. Her research interest is in using deep learning methods to analyze the chemical information contained in different spectra. She received a bachelor's degree in chemistry from ShanghaiTech University.</p>
+        <p>Wenjin's research interest is in using deep learning methods to analyze the chemical information contained in different spectra. She received a bachelor's degree in chemistry from ShanghaiTech University.</p>
         <p>with <a href="https://www.birmingham.ac.uk/staff/profiles/chemistry/chen-linjiang.aspx" target="_blank"> Linjiang Chen</a> and <a href="https://www.cs.bham.ac.uk//~leonarda/" target="_blank"> Aleš Leonardis</a></p>
         <a href="#" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="#" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
@@ -958,7 +1068,7 @@ body, html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="jong.png" alt="Jong" style="width:100%">
+      <img src="jong.png" alt="Jong">
       <div class="container">
         <h2>Jong Kwon</h2>
         <p class="title">PhD Student (2021 -), <b>MI h</b><br>@Oxford</p>
@@ -971,9 +1081,9 @@ body, html {
       </div>
     </div>
   </div>
-  <div class="column">
+  <!-- <div class="column">
     <div class="card">
-      <img src="kangning.png" alt="Kangning" style="width:100%">
+      <img src="kangning.png" alt="Kangning">
       <div class="container">
         <h2>Kangning Zhang</h2>
         <p class="title">PhD Student (2020 -), <b>MI h</b><br>@Oxford</p>
@@ -986,7 +1096,7 @@ body, html {
         <a href="mailto:kangning.zhang@eng.ox.ac.uk" target="_blank" class="fa fa-envelope-o fa-2x"></a>
       </div>
     </div>
-  </div>
+  </div> -->
 <!-- <strong><h3>Research Associates/Assistants:</h3></strong>
  
   <div class="column">
@@ -1050,9 +1160,9 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
       </div>
     </div>
   </div> -->
-  <div class="column">
+  <!-- <div class="column">
     <div class="card">
-      <img src="zareef.png" alt="Zareef" style="width:100%">
+      <img src="zareef.png" alt="Zareef">
       <div class="container">
         <h2>Zareef Safdar</h2>
         <p class="title">(BSE from University of Michigan &rarr; Master@Simon Fraser University, 2023 -), <b>MI v</b></p>
@@ -1063,14 +1173,14 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
         <a href="mailto:szareef@umich.edu" target="_blank" class="fa fa-envelope-o fa-2x"></a>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="column">
     <div class="card">
-      <img src="dongheng.jpg" alt="Dongheng" style="width:100%">
+      <img src="dongheng.jpg" alt="Dongheng">
       <div class="container">
         <h2>Dongheng Lin</h2>
         <p class="title">(Master from UIUC, 2023 -), <b>MI v</b></p>
-        <p>Dongheng is currently a Master student at the University of Illinois, Urbana-Champaign. His primary focus lies in the realms of Feature Engineering and Representation Learning, specifically applied to Social Media Images.</p>
+        <p>Dongheng's primary research focus lies in the realms of Feature Engineering and Representation Learning, specifically applied to Social Media Images.</p>
         <a href="https://rathgrith.github.io/" target="_blank" class="fa fa-home fa-2x"></a>
         <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID&user=DpiMTsoAAAAJ" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
         <a href="https://www.linkedin.com/in/dongheng-lin-3a7280281/" target="_blank" class="fa fa-linkedin fa-2x"></a>
@@ -1078,9 +1188,9 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
       </div>
     </div>
   </div>
-  <div class="column">
+  <!-- <div class="column">
     <div class="card">
-      <img src="qiyue.jpg" alt="Qiyue" style="width:100%">
+      <img src="qiyue.jpg" alt="Qiyue">
       <div class="container">
         <h2>Qiyue Sun</h2>
         <p class="title">(PhD student from Shandong University, 2024 -), <b>MI v</b></p>
@@ -1091,6 +1201,20 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
         <a href="mailto:qxs380@student.bham.ac.uk" target="_blank" class="fa fa-envelope-o fa-2x"></a>
       </div>
     </div>
+  </div> -->
+  <div class="column">
+    <div class="card">
+      <img src="anqi.webp" alt="Anqi">
+      <div class="container">
+        <h2>Anqi Zhang</h2>
+        <p class="title">(Master from BIT, 2025 -), <b>MI v</b></p>
+        <p>Anqi's research interest is mainly in Computer Vision and Multi-modal perception, including Incremental/Few-shot Semantic Segmentation, Referring Segmentation, etc.</p>
+        <a href="https://andyzaq.alphaxiv.io/" target="_blank" class="fa fa-home fa-2x"></a>
+        <a href="https://scholar.google.com/citations?user=DmRZv5sAAAAJ" target="_blank" class="fa fa-graduation-cap fa-2x"></a>
+        <a href="https://github.com/ANDYZAQ" target="_blank" class="fa fa-github fa-2x"></a>
+        <a href="mailto:axz464@student.bham.ac.uk" target="_blank" class="fa fa-envelope-o fa-2x"></a>
+      </div>
+    </div>
   </div>
 </div> 
 <!-- <div  style="overflow-y: scroll; height:564px;"> -->
@@ -1099,9 +1223,10 @@ He is a Kaggle Master specialized in Medical Image Analysis. He is interested in
 <!-- </pre> -->
 <pre>
 <strong>Alumni:</strong>
-Research fellow: Cai Wingfield
-RA: Hao Chen (now PhD@Cambridge), Chenyuan Qu (now PhD@Birmingham), Yuqi Hou (now PhD@Birmingham), Xiaohan Hong (now MSc@NUS), Irene Testini, Daniel Flockhart, Yunfan Song
-Visiting students: Chen Xu (from Fudan University)
+Research fellow: <a href="https://www.birmingham.ac.uk/staff/profiles/computer-science/research-data-scientists/wingfield-cai" target="_blank">Cai Wingfield</a>
+PhD: <a href="https://www.bdi.ox.ac.uk/Team/kangning-zhang" target="_blank">Kangning Zhang</a>
+RA: <a href="https://h-chen.com/" target="_blank">Hao Chen</a> (now PhD@Cambridge), Chenyuan Qu (now PhD@Birmingham), Yuqi Hou (now PhD@Birmingham), Xiaohan Hong (now MSc@NUS), Irene Testini, Daniel Flockhart, Yunfan Song
+Visiting students: <a href="https://scholar.google.com/citations?user=JXNPS6QAAAAJ&hl=zh-CN" target="_blank">Chen Xu</a> (from Fudan University), <a href="https://www.linkedin.com/in/szareef/?originalSubdomain=ca" target="_blank">Zareef Safdar</a> (from University of Michigan), <a href="https://openreview.net/profile?id=~Qiyue_Sun1" target="_blank">Qiyue Sun</a> (from Shandong University)
 MSc: Hao Chen, Chenyuan Qu, Wentian Xu (Best Project in AI &rarr; PhD@Oxford), Xintong Chen, Ziyin Ma, Qi Wang, Wonseok Choi, Yu Zhao, Haotian Li, Mupei Qin, Zongyuan Zhang, Armel Sida, Venkata Arutla, Tushar Baweja, Ryan Ramminger
 </pre>
 <!-- </div> -->
